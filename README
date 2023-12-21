@@ -1,1 +1,40 @@
-created
+# Determine Knot Crossings
+
+## Overview
+This code reads in input containing the information on a knot with the x,y,z coords of all the vertices of the shape. This is then used to calculate where the knot crosses on itself and label the resulting knot
+
+## Prerequisites
+A C++ compiler (e.g., g++)
+Basic knowledge of the "vect" file format
+
+## Code
+To compile the code, use the following command:
+
+  g++ -o intersection_detection sweepline.c
+
+Then to run the code run the following command with the input vect file piped in:
+  ./intersection_detection < input_file.vect
+
+Replace input_file.vect with the path to your input file in the "vect" format.
+
+## Vect File Format
+The first line should be "VECT," followed by the number of components and the total number of lines. The subsequent lines should contain the 3D coordinates of points and their connections to form line segments.
+
+
+## Code Structure
+The code is structured into several sections:
+
+Data Structures: Defines structures for points, edges, crossings, and a custom priority queue.
+Sorting Functions: Implements merge sort for points and edges.
+Intersection Testing: Provides functions to test for intersections between line segments.
+Main Function: Reads input, processes line segments, detects intersections, and prints results.
+Algorithm Overview
+Read input points and edges from the "vect" file.
+Sort the points from left to right using merge sort.
+Process line segments and detect intersections using a custom priority queue.
+Identify and label intersections, storing the information for later analysis.
+Output the results, including the type of intersection and relevant codes.
+
+## Results
+The program prints the crossing code information, labelling the knot and where the different strands of the crossing connect to the other knot strands
+
